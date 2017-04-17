@@ -1,0 +1,67 @@
+<ion-header>
+
+  <ion-navbar color="facebook">
+    <ion-title>Detalhes do Produto</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-grid fixed>
+
+    <!-- Nome do Produto -->
+    <ion-row>
+      <ion-col col-sm>
+        <h6 class="titleProduct">{{product.name}}</h6>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <!-- Descricao e Botao de logar -->
+  <ion-img width="200px" height="200px" class="centerContent" [src]="product.thumb"></ion-img>
+
+  <!-- Detalhes do preco -->
+  <div class="priceProduct">
+    <p>A partir de</p>
+    <p><span>R$</span> {{product.price}}<span>,00</span></p>
+  </div>
+
+  <!-- Botao para ativar pagina de descricao -->
+  <ion-list>
+    <button ion-item class="linkProduct" detail-push (click)="openDescription(product.description)">
+      <ion-icon name="md-list-box" item-left></ion-icon>
+      Descrição
+    </button>
+
+    <!-- Inserir Comentario -->
+    <button ion-item class="linkProduct" detail-push (click)="openCommentDisplay(product.id, product.name)">
+      <ion-icon name="md-chatboxes" item-left></ion-icon>
+      Inserir Comentário
+    </button>
+
+    <!-- Compartilhar -->
+    <button ion-item class="linkProduct" detail-push (click)="shareProduct(product.name, product.thumb)">
+      <ion-icon name="md-share" item-left></ion-icon>
+      Compartilhar
+    </button>
+  </ion-list>
+
+  <!-- Comentarios -->
+  <ion-item-divider></ion-item-divider>
+  <ion-item-divider>
+    Comentários
+  </ion-item-divider>
+
+  <ion-list *ngIf="commentsReady">
+    <ion-item text-wrap *ngFor='let comment of comments'>
+      <h2>{{comment.username}}</h2>
+      <p>{{comment.comment}}</p>
+    </ion-item>
+  </ion-list>
+  
+  
+
+</ion-content>

@@ -1,0 +1,36 @@
+<!--
+  Generated template for the Login page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding>
+
+  <br><br><br><br><br><br>
+
+  <ion-grid fixed>
+
+    <!-- Icone e Nome -->
+    <ion-row>
+      <ion-col col-sm>
+        <!--<ion-icon name="md-appstore" class="centerContent icon70px"></ion-icon>-->
+        <img src="assets/minutrade.png" class="centerContent">
+        <h3 class="centerContent">E-Commerce Application</h3>
+      </ion-col>
+    </ion-row>
+
+    <br><br><br><br><br><br><br><br><br>
+
+    <!-- Descricao e Botao de logar -->
+    <ion-row>
+      <ion-col col-sm>
+        <p class="centerContent">Faça login usando sua conta do Facebook.</p>
+        <button ion-button icon-left color="facebook" (click)="facebookLogin()" class="centerContent">
+          <ion-icon name="logo-facebook"></ion-icon>
+          Entrar com Facebook
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="facebook">
+    
+    <ion-title>
+      Lista de Produtos
+    </ion-title>
+
+    <ion-buttons start *ngIf="userReady">
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <img [src]="user.picture" class="userAvatarSize">
+      </button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- So processa na DOM se o usuario estiver pronto -->
+  <!--<img *ngIf="userReady" [src]="user.picture">-->
+
+  <!-- Lista de Produtos -->
+  <ion-list>
+    <ion-item *ngFor='let product of products'>
+      <ion-thumbnail item-left>
+        <img [src]="product.thumb">
+      </ion-thumbnail>
+      <h2 class="ellipsisText">{{product.name}}</h2>
+      <p>R${{product.price}},00</p>
+      <button ion-button clear item-right (click)="openProduct(product)">Detalhes</button>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

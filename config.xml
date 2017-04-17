@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.wpdas.minutradeapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Minutrade</name>
+    <description>Aplicativo de teste para Minutrade</description>
+    <author email="wendersonpdas@gmail.com" href="http://ionicframework.com/">Wenderson Pires da Silva</author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-navigation href="http://ionic.local/*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <preference name="orientation" value="portrait" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="16" />
+    <preference name="BackupWebStorage" value="none" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="FadeSplashScreenDuration" value="300" />
+    <preference name="SplashShowOnlyFirstTime" value="false" />
+    <preference name="SplashScreenDelay" value="5000"/>
+    <feature name="StatusBar">
+        <param name="ios-package" onload="true" value="CDVStatusBar" />
+    </feature>
+    <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
+    <plugin name="cordova-plugin-whitelist" spec="1.3.1" />
+    <plugin name="cordova-plugin-console" spec="1.0.5" />
+    <plugin name="cordova-plugin-statusbar" spec="2.2.1" />
+    <plugin name="cordova-plugin-device" spec="1.1.4" />
+    <plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
+    <plugin name="cordova-plugin-nativestorage" spec="~2.2.2" />
+
+    <platform name="android">
+        <icon density="ldpi" src="www/icons/mipmap-ldpi/ic_launcher.png" />
+        <icon density="mdpi" src="www/icons/mipmap-mdpi/ic_launcher.png" />
+        <icon density="hdpi" src="www/icons/mipmap-hdpi/ic_launcher.png" />
+        <icon density="xhdpi" src="www/icons/mipmap-xhdpi/ic_launcher.png" />
+        <icon density="xxhdpi" src="www/icons/mipmap-xxhdpi/ic_launcher.png" />
+        <icon density="xxxhdpi" src="www/icons/mipmap-xxxhdpi/ic_launcher.png" />
+
+        <!-- Splash -->
+        <splash src="src/assets/splash/drawable-port-hdpi-screen.png" density="port-hdpi"/>
+    </platform>
+</widget>

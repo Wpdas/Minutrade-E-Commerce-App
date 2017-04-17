@@ -1,0 +1,37 @@
+page-product {
+    
+    .titleProduct {
+        color: #3b5998;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 30px;
+    }
+
+    .priceProduct {
+        margin-top: 50px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .priceProduct > p:first-child {
+        margin: 0;
+        color: grey;
+        font-size: 16px;
+    }
+
+    .priceProduct > p:last-child {
+        margin: 0;
+        color: #4d7f17;
+        font-weight: bold;
+        font-size: 34px;
+    }
+
+    .priceProduct p > span {
+        font-size: 16px;
+    }
+
+    .linkProduct {
+        color: #3b5998;
+        font-weight: bold;
+    }
+}
