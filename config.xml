@@ -40,6 +40,9 @@
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
     <plugin name="cordova-plugin-nativestorage" spec="~2.2.2" />
 
+    <!-- Permite que dispositivo mais antigos ou lentos, tenham tempo de processar a View principal -->
+    <preference name="loadUrlTimeoutValue" value="700000" />
+
     <platform name="android">
         <icon density="ldpi" src="www/icons/mipmap-ldpi/ic_launcher.png" />
         <icon density="mdpi" src="www/icons/mipmap-mdpi/ic_launcher.png" />
