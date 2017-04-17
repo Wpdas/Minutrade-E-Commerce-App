@@ -22,6 +22,9 @@ export class ProductPage {
   public comments = new Array();
   public commentsReady:boolean = false;
 
+  //Existe comentario?
+  private existsComment:boolean = false;
+
   //Banco de Dados Aberto
   private dataBase:SQLiteObject;
 
@@ -69,7 +72,11 @@ export class ProductPage {
         }
 
         //Se nao tiver comentario, insere uma aviso
-        if(this.comments.length == 0) this.comments.push({username: 'Nenhum comentário.', comment:'Seja o primeiro a comentar :)'});
+        if(this.comments.length == 0) {
+          this.comments.push({username: 'Nenhum comentário.', comment:'Seja o primeiro a comentar :)'})
+        } else {
+          this.existsComment = true;
+        };
 
         this.commentsReady = true;
 
@@ -97,9 +104,18 @@ export class ProductPage {
     let commentModal = this.modalCtrl.create(CommentModal, {productID: productID, productName:productName});
     //Ao fechar este modal, atualiza a lista de comentarios
     commentModal.onDidDismiss(newComment => {
-      
-      //Atualiza comentarios inserindo o comentario novo registrado
-      this.comments.push(newComment);
+
+      //Se existir novo comentário importado do Modal...
+      if(newComment){
+
+        //Apaga alerta
+        if(!this.existsComment) this.comments = new Array();
+        this.existsComment = true; //Define que agora existe comentario
+
+        //Atualiza comentarios inserindo o comentario novo registrado
+        this.comments.push(newComment);
+      }
+
     })
     commentModal.present();
   }
